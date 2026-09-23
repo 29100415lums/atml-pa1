@@ -38,15 +38,14 @@ class GradientReversal(nn.Module):
         return GradientReversalFunction.apply(x, self.alpha)
 
 
-def grl_schedule(current_epoch, max_epochs, step=0, steps_per_epoch=1):
+def grl_schedule(current_epoch, max_epochs):
     """
     Computes GRL alpha using the schedule from the DANN paper:
-        p = (current_epoch * steps_per_epoch + step) / (max_epochs * steps_per_epoch)
+        p = current_epoch / max_epochs
         alpha(p) = 2 / (1 + exp(-10*p)) - 1
     Increases from ~0 at start to ~1 at end.
-    Updated to progress smoothly per-step for maximum stability.
     """
-    p = (current_epoch * steps_per_epoch + step) / max(max_epochs * steps_per_epoch, 1)
+    p = current_epoch / max(max_epochs, 1)
     return 2.0 / (1.0 + np.exp(-10.0 * p)) - 1.0
 
 

@@ -62,18 +62,12 @@ def train_cdan(train_loaders, target_loader, val_loaders, device,
         (model, domain_disc, history)
     """
     model = PACSBackbone(num_classes=7).to(device)
+    disc = DomainDiscriminator(in_dim=CDAN_DIM).to(device)  # Operates on 3584-d conditioned features
 
-    # Initialize from source-only checkpoint if available (stabilizes cls from epoch 1)
-    src_ckpt = save_path.replace('cdan.pt', 'source_only.pt') if save_path else None
-    if src_ckpt and os.path.exists(src_ckpt):
-        model.load_state_dict(torch.load(src_ckpt, map_location=device))
-        print("  [CDAN] Initialized from source_only checkpoint.")
-
-    disc = DomainDiscriminator(in_dim=CDAN_DIM).to(device)
-
-    # Separate optimizers: backbone trains slowly, discriminator trains faster
-    backbone_optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
-    disc_optimizer = torch.optim.AdamW(disc.parameters(), lr=lr * 10, weight_decay=weight_decay)
+    optimizer = torch.optim.AdamW(
+        list(model.parameters()) + list(disc.parameters()),
+        lr=lr, weight_decay=weight_decay
+    )
     cls_criterion = nn.CrossEntropyLoss()
     dom_criterion = nn.CrossEntropyLoss()
 
@@ -94,12 +88,12 @@ def train_cdan(train_loaders, target_loader, val_loaders, device,
         model.freeze_bn_running_stats()
         disc.train()
 
+        alpha = grl_schedule(epoch, max_epochs)
+        disc.set_alpha(alpha)
+
         epoch_cls, epoch_dom, epoch_total = 0.0, 0.0, 0.0
 
         for step in range(steps_per_epoch):
-            # Set GRL alpha smoothly per step
-            alpha = grl_schedule(epoch, max_epochs, step=step, steps_per_epoch=steps_per_epoch)
-            disc.set_alpha(alpha)
             src_imgs, src_labels = [], []
             for domain in source_domains:
                 imgs, labels, _ = next(train_loaders[domain])
@@ -118,8 +112,7 @@ def train_cdan(train_loaders, target_loader, val_loaders, device,
             src_dom_labels = torch.zeros(n_src, dtype=torch.long, device=device)
             tgt_dom_labels = torch.ones(n_tgt, dtype=torch.long, device=device)
 
-            backbone_optimizer.zero_grad()
-            disc_optimizer.zero_grad()
+            optimizer.zero_grad()
 
             # Source forward
             src_logits, src_feats = model(src_imgs)
@@ -138,12 +131,12 @@ def train_cdan(train_loaders, target_loader, val_loaders, device,
             dom_loss = (dom_criterion(src_dom_logits, src_dom_labels) +
                         dom_criterion(tgt_dom_logits, tgt_dom_labels)) / 2.0
 
-            total_loss = cls_loss + 1.0 * dom_loss
+            total_loss = cls_loss + 0.1 * dom_loss
             total_loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-            torch.nn.utils.clip_grad_norm_(disc.parameters(), max_norm=1.0)
-            backbone_optimizer.step()
-            disc_optimizer.step()
+            torch.nn.utils.clip_grad_norm_(
+                list(model.parameters()) + list(disc.parameters()), max_norm=1.0
+            )
+            optimizer.step()
             model.freeze_bn_running_stats()
 
             epoch_cls += cls_loss.item()
