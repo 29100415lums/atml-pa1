@@ -1,341 +1,1478 @@
 {
-  "accepted_count": 67,
-  "rejected_count": 93,
+  "accepted_count": 210,
+  "rejected_count": 179,
+  "target_per_pair": 21,
+  "num_directed_pairs": 10,
   "conflicts": [
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_0.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 285,
+      "style_idx": 227
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_1.png",
+      "content_class": "car",
+      "style_class": "cat",
+      "content_idx": 1040,
+      "style_idx": 391
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_2.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 1059,
+      "style_idx": 868
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_3.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 1068,
+      "style_idx": 1187
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_4.png",
+      "content_class": "car",
+      "style_class": "cat",
+      "content_idx": 1179,
+      "style_idx": 1310
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_5.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 1183,
+      "style_idx": 1327
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_6.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 1297,
+      "style_idx": 1409
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_7.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 1356,
+      "style_idx": 1457
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_8.png",
+      "content_class": "car",
+      "style_class": "cat",
+      "content_idx": 1699,
+      "style_idx": 1512
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_9.png",
+      "content_class": "car",
+      "style_class": "cat",
+      "content_idx": 1717,
+      "style_idx": 1642
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_10.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 1746,
+      "style_idx": 1689
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_11.png",
+      "content_class": "car",
+      "style_class": "cat",
+      "content_idx": 2502,
+      "style_idx": 1739
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_12.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 2595,
+      "style_idx": 1763
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_13.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 2599,
+      "style_idx": 2438
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_14.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 2603,
+      "style_idx": 2448
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_15.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 2710,
+      "style_idx": 2504
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_16.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 2921,
+      "style_idx": 2608
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_17.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 3187,
+      "style_idx": 2775
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_18.png",
       "content_class": "car",
-      "style_class": "cat"
+      "style_class": "cat",
+      "content_idx": 3426,
+      "style_idx": 3115
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_19.png",
+      "content_class": "car",
+      "style_class": "cat",
+      "content_idx": 3526,
+      "style_idx": 3162
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_car_style_cat_20.png",
+      "content_class": "car",
+      "style_class": "cat",
+      "content_idx": 3582,
+      "style_idx": 3222
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_0.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 227,
+      "style_idx": 285
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_1.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 391,
+      "style_idx": 1040
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_2.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 868,
+      "style_idx": 1059
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_3.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 1187,
+      "style_idx": 1068
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_4.png",
       "content_class": "cat",
-      "style_class": "car"
+      "style_class": "car",
+      "content_idx": 1310,
+      "style_idx": 1179
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_5.png",
       "content_class": "cat",
-      "style_class": "car"
+      "style_class": "car",
+      "content_idx": 1327,
+      "style_idx": 1183
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_6.png",
       "content_class": "cat",
-      "style_class": "car"
+      "style_class": "car",
+      "content_idx": 1409,
+      "style_idx": 1297
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_7.png",
       "content_class": "cat",
-      "style_class": "car"
+      "style_class": "car",
+      "content_idx": 1457,
+      "style_idx": 1356
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_8.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 1512,
+      "style_idx": 1699
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_9.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 1642,
+      "style_idx": 1717
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_10.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 1689,
+      "style_idx": 1746
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_11.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 1739,
+      "style_idx": 2502
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_12.png",
       "content_class": "cat",
-      "style_class": "car"
+      "style_class": "car",
+      "content_idx": 1763,
+      "style_idx": 2595
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_13.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 2448,
+      "style_idx": 2603
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_14.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 2504,
+      "style_idx": 2710
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_15.png",
       "content_class": "cat",
-      "style_class": "car"
+      "style_class": "car",
+      "content_idx": 2608,
+      "style_idx": 2921
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_16.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 2775,
+      "style_idx": 3187
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_17.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 3115,
+      "style_idx": 3426
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_18.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 3162,
+      "style_idx": 3526
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_19.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 3222,
+      "style_idx": 3582
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_cat_style_car_20.png",
+      "content_class": "cat",
+      "style_class": "car",
+      "content_idx": 3336,
+      "style_idx": 3641
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_0.png",
       "content_class": "bird",
-      "style_class": "truck"
+      "style_class": "truck",
+      "content_idx": 116,
+      "style_idx": 131
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_1.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 272,
+      "style_idx": 417
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_2.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 307,
+      "style_idx": 497
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_3.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 379,
+      "style_idx": 797
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_4.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 400,
+      "style_idx": 988
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_5.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 436,
+      "style_idx": 988
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_6.png",
       "content_class": "bird",
-      "style_class": "truck"
+      "style_class": "truck",
+      "content_idx": 959,
+      "style_idx": 1338
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_7.png",
       "content_class": "bird",
-      "style_class": "truck"
+      "style_class": "truck",
+      "content_idx": 1053,
+      "style_idx": 1430
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_8.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 1131,
+      "style_idx": 1893
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_9.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 1279,
+      "style_idx": 1936
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_10.png",
       "content_class": "bird",
-      "style_class": "truck"
+      "style_class": "truck",
+      "content_idx": 1286,
+      "style_idx": 2083
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_11.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 1523,
+      "style_idx": 2319
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_12.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 1528,
+      "style_idx": 2420
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_13.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 1634,
+      "style_idx": 2812
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_14.png",
       "content_class": "bird",
-      "style_class": "truck"
+      "style_class": "truck",
+      "content_idx": 1638,
+      "style_idx": 2884
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_15.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 1795,
+      "style_idx": 3108
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_16.png",
       "content_class": "bird",
-      "style_class": "truck"
+      "style_class": "truck",
+      "content_idx": 2044,
+      "style_idx": 3108
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_17.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 2116,
+      "style_idx": 3194
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_18.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 2138,
+      "style_idx": 3663
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_19.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 2638,
+      "style_idx": 3687
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_bird_style_truck_20.png",
+      "content_class": "bird",
+      "style_class": "truck",
+      "content_idx": 2696,
+      "style_idx": 3822
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_0.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 131,
+      "style_idx": 116
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_1.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 417,
+      "style_idx": 272
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_2.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 497,
+      "style_idx": 307
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_3.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 797,
+      "style_idx": 379
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_4.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 908,
+      "style_idx": 400
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_5.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 988,
+      "style_idx": 436
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_6.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 1338,
+      "style_idx": 1053
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_7.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 1430,
+      "style_idx": 1053
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_8.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 1893,
+      "style_idx": 1131
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_9.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 1936,
+      "style_idx": 1279
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_10.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 2083,
+      "style_idx": 1286
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_11.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 2319,
+      "style_idx": 1523
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_12.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 2420,
+      "style_idx": 1528
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_13.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 2812,
+      "style_idx": 1634
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_14.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 2884,
+      "style_idx": 1795
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_15.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 2936,
+      "style_idx": 1795
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_16.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 3108,
+      "style_idx": 2044
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_17.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 3194,
+      "style_idx": 2116
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_18.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 3663,
+      "style_idx": 2138
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_19.png",
       "content_class": "truck",
-      "style_class": "bird"
+      "style_class": "bird",
+      "content_idx": 3687,
+      "style_idx": 2638
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_truck_style_bird_20.png",
+      "content_class": "truck",
+      "style_class": "bird",
+      "content_idx": 3782,
+      "style_idx": 3013
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_0.png",
       "content_class": "dog",
-      "style_class": "ship"
+      "style_class": "ship",
+      "content_idx": 39,
+      "style_idx": 165
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_1.png",
       "content_class": "dog",
-      "style_class": "ship"
+      "style_class": "ship",
+      "content_idx": 363,
+      "style_idx": 430
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_2.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 645,
+      "style_idx": 609
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_3.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 773,
+      "style_idx": 610
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_4.png",
       "content_class": "dog",
-      "style_class": "ship"
+      "style_class": "ship",
+      "content_idx": 814,
+      "style_idx": 638
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_5.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 967,
+      "style_idx": 704
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_6.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 1251,
+      "style_idx": 801
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_7.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 1295,
+      "style_idx": 1496
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_8.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 1318,
+      "style_idx": 1720
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_9.png",
       "content_class": "dog",
-      "style_class": "ship"
+      "style_class": "ship",
+      "content_idx": 1525,
+      "style_idx": 1749
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_10.png",
       "content_class": "dog",
-      "style_class": "ship"
+      "style_class": "ship",
+      "content_idx": 2073,
+      "style_idx": 2026
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_11.png",
       "content_class": "dog",
-      "style_class": "ship"
+      "style_class": "ship",
+      "content_idx": 2306,
+      "style_idx": 2340
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_12.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 2507,
+      "style_idx": 2660
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_13.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 2573,
+      "style_idx": 2795
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_14.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 2664,
+      "style_idx": 3111
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_15.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 2741,
+      "style_idx": 3197
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_16.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 2919,
+      "style_idx": 3213
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_17.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 2950,
+      "style_idx": 3256
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_18.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 3058,
+      "style_idx": 3393
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_19.png",
       "content_class": "dog",
-      "style_class": "ship"
+      "style_class": "ship",
+      "content_idx": 3206,
+      "style_idx": 3478
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_dog_style_ship_20.png",
+      "content_class": "dog",
+      "style_class": "ship",
+      "content_idx": 3252,
+      "style_idx": 3729
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_0.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 165,
+      "style_idx": 39
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_1.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 430,
+      "style_idx": 363
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_2.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 609,
+      "style_idx": 645
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_3.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 610,
+      "style_idx": 773
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_4.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 638,
+      "style_idx": 814
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_5.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 704,
+      "style_idx": 967
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_6.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 801,
+      "style_idx": 1251
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_7.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 1496,
+      "style_idx": 1295
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_8.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 1720,
+      "style_idx": 1318
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_9.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 1749,
+      "style_idx": 1525
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_10.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 2026,
+      "style_idx": 2073
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_11.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 2340,
+      "style_idx": 2507
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_12.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 2660,
+      "style_idx": 2507
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_13.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 2684,
+      "style_idx": 2573
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_14.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 2795,
+      "style_idx": 2573
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_15.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 3111,
+      "style_idx": 2664
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_16.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 3197,
+      "style_idx": 2741
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_17.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 3213,
+      "style_idx": 2919
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_18.png",
       "content_class": "ship",
-      "style_class": "dog"
+      "style_class": "dog",
+      "content_idx": 3256,
+      "style_idx": 2950
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_19.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 3393,
+      "style_idx": 3058
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_ship_style_dog_20.png",
+      "content_class": "ship",
+      "style_class": "dog",
+      "content_idx": 3478,
+      "style_idx": 3206
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_0.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 10,
+      "style_idx": 96
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_1.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 392,
+      "style_idx": 257
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_2.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 455,
+      "style_idx": 521
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_3.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 944,
+      "style_idx": 833
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_4.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 980,
+      "style_idx": 881
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_5.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 1043,
+      "style_idx": 1048
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_6.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 1063,
+      "style_idx": 1066
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_7.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 1567,
+      "style_idx": 1243
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_8.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 1576,
+      "style_idx": 1243
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_9.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 1596,
+      "style_idx": 1274
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_10.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 1742,
+      "style_idx": 1316
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_11.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 2314,
+      "style_idx": 1372
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_12.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 2632,
+      "style_idx": 1593
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_13.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 2980,
+      "style_idx": 1621
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_14.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 3126,
+      "style_idx": 1771
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_15.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 3159,
+      "style_idx": 2056
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_16.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 3165,
+      "style_idx": 2113
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_17.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 3323,
+      "style_idx": 2581
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_18.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 3387,
+      "style_idx": 2777
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_19.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 3488,
+      "style_idx": 2901
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_airplane_style_monkey_20.png",
+      "content_class": "airplane",
+      "style_class": "monkey",
+      "content_idx": 3768,
+      "style_idx": 3010
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_0.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 96,
+      "style_idx": 10
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_1.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 257,
+      "style_idx": 392
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_2.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 521,
+      "style_idx": 455
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_3.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 833,
+      "style_idx": 944
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_4.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 881,
+      "style_idx": 980
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_5.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1048,
+      "style_idx": 1043
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_6.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1066,
+      "style_idx": 1063
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_7.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1071,
+      "style_idx": 1567
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_8.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1243,
+      "style_idx": 1576
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_9.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1274,
+      "style_idx": 1596
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_10.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1316,
+      "style_idx": 1742
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_11.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1372,
+      "style_idx": 2314
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_12.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1593,
+      "style_idx": 2632
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_13.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1621,
+      "style_idx": 2980
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_14.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 1771,
+      "style_idx": 3126
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_15.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 2056,
+      "style_idx": 3159
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_16.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 2113,
+      "style_idx": 3165
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_17.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 2581,
+      "style_idx": 3323
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_18.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 2777,
+      "style_idx": 3387
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_19.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 2901,
+      "style_idx": 3488
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_monkey_style_airplane_20.png",
+      "content_class": "monkey",
+      "style_class": "airplane",
+      "content_idx": 3010,
+      "style_idx": 3768
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_0.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 431,
+      "style_idx": 173
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_1.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 449,
+      "style_idx": 626
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_2.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 964,
+      "style_idx": 627
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_3.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 993,
+      "style_idx": 762
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_4.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 1792,
+      "style_idx": 1011
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_5.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 1974,
+      "style_idx": 1208
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_6.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 2005,
+      "style_idx": 1209
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_7.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 2273,
+      "style_idx": 1474
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_8.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 2882,
+      "style_idx": 1475
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_9.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 3055,
+      "style_idx": 1745
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_10.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 3114,
+      "style_idx": 1979
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_11.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 3221,
+      "style_idx": 1979
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_12.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 3259,
+      "style_idx": 2293
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_13.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 3418,
+      "style_idx": 2387
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_14.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 3498,
+      "style_idx": 2449
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_15.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 3610,
+      "style_idx": 2517
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_16.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 3685,
+      "style_idx": 2548
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_17.png",
       "content_class": "horse",
-      "style_class": "deer"
+      "style_class": "deer",
+      "content_idx": 3706,
+      "style_idx": 2650
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_18.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 3777,
+      "style_idx": 2906
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_19.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 4153,
+      "style_idx": 3078
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_horse_style_deer_20.png",
+      "content_class": "horse",
+      "style_class": "deer",
+      "content_idx": 4161,
+      "style_idx": 3078
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_0.png",
       "content_class": "deer",
-      "style_class": "horse"
+      "style_class": "horse",
+      "content_idx": 173,
+      "style_idx": 431
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_1.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 626,
+      "style_idx": 449
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_2.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 627,
+      "style_idx": 2273
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_3.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 762,
+      "style_idx": 993
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_4.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 1011,
+      "style_idx": 1792
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_5.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 1208,
+      "style_idx": 1974
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_6.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 1209,
+      "style_idx": 2005
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_7.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 1474,
+      "style_idx": 2273
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_8.png",
       "content_class": "deer",
-      "style_class": "horse"
+      "style_class": "horse",
+      "content_idx": 1475,
+      "style_idx": 2882
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_9.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 1745,
+      "style_idx": 3055
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_10.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 1899,
+      "style_idx": 3259
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_11.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 1979,
+      "style_idx": 3221
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_12.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 2293,
+      "style_idx": 3259
     },
     {
       "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_13.png",
       "content_class": "deer",
-      "style_class": "horse"
+      "style_class": "horse",
+      "content_idx": 2387,
+      "style_idx": 3418
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_14.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 2449,
+      "style_idx": 4249
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_15.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 2517,
+      "style_idx": 3610
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_16.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 2650,
+      "style_idx": 3706
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_17.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 2906,
+      "style_idx": 3777
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_18.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 3012,
+      "style_idx": 4161
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_19.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 3078,
+      "style_idx": 4161
+    },
+    {
+      "filepath": "./task1/results/cue_conflicts/conflict_deer_style_horse_20.png",
+      "content_class": "deer",
+      "style_class": "horse",
+      "content_idx": 3096,
+      "style_idx": 4173
     }
   ]
 }

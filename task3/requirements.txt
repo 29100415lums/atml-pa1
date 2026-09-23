@@ -1,0 +1,75 @@
+================================================================================
+ATML PA1 - TASK 3: DOMAIN GENERALIZATION (DG)
+REQUIREMENTS SPECIFICATION & VERIFICATION CHECKLIST
+================================================================================
+
+1. DATASET, SPLITS & LEAKAGE RULES
+--------------------------------------------------------------------------------
+[x] Dataset: PACS. Target domain: Sketch. Source domains: Photo, Art Painting, Cartoon.
+[x] Split: Reuse exactly the same 80/20 source splits and seed (6304) from Task 2.
+[x] Target Leakage Rule: NO SKETCH IMAGE may be loaded by Task 3 training, source-side diagnostics, or checkpoint selection.
+[x] Task 2 Target results cannot be used to revise Task 3 architecture, augmentation, or settings.
+[x] Sketch is loaded ONLY in the final evaluation script after all Task 3 decisions are fixed.
+
+2. MODEL ARCHITECTURE & BATCH-NORMALIZATION POLICY
+--------------------------------------------------------------------------------
+[x] Backbone: torchvision ResNet-18 initialized with ResNet18_Weights.IMAGENET1K_V1.
+[x] Head: 7-class linear classifier layer.
+[x] Preprocessing: Same as Task 2 (Resize 256, Crop 224, random horizontal flip).
+[x] CRITICAL BATCHNORM RULE: Freeze all BatchNorm running means and variances at pretrained ImageNet values for all methods! (Scale/bias remain trainable).
+[x] Epoch budget & Optimizer: 30 epochs max, AdamW (lr=1e-4, wd=1e-4).
+[x] Early Stopping: 5 epochs without improvement in mean source-validation macro-F1.
+[x] Batching: 8 examples from each source domain (24 total per batch).
+
+3. THE THREE REQUIRED METHODS
+--------------------------------------------------------------------------------
+[x] Method 1: ERM Baseline
+    - Reuse the Source-only ERM checkpoint trained in Task 2. Do not retrain.
+[x] Method 2: DAN-DG (Pairwise Source-Domain Alignment)
+    - Apply MMD to every pair of observed source domains (Photo/Art, Photo/Cartoon, Art/Cartoon).
+    - lambda_DG = 1.0. Same 3 RBF kernels (0.5, 1, 2 * median pairwise squared distance).
+    - Note: Standard DAN aligns source vs target; DAN-DG aligns source vs source.
+[x] Method 3: SAM (Sharpness-Aware Minimization)
+    - rho = 0.05.
+    - Standard non-adaptive SAM. Two forward/backward passes per step.
+    - Frozen BatchNorm running-statistics policy applies during both SAM passes.
+
+4. COMMON EVALUATION & DIAGNOSTICS
+--------------------------------------------------------------------------------
+[x] Report accuracy and macro-F1 on each source validation domain, mean, and worst-domain.
+[x] Report final accuracy and macro-F1 on Sketch, and change relative to ERM.
+[x] Source-Domain Separability Score:
+    - Freeze backbone, extract balanced features from the 3 source validation sets.
+    - 70/30 split using seed 6304.
+    - Train multinomial Logistic Regression (C=1) to predict Photo vs Art vs Cartoon.
+    - Held-out accuracy = Source-domain separability (chance is 33.3%).
+[x] Local Sharpness Proxy:
+    - Select fixed validation batch (32 examples from each source, seed 6304).
+    - Measure increase in cross-entropy after 1 normalized gradient-ascent perturbation (radius 0.05).
+[x] Per-class Sketch accuracy: Compare with ERM to inspect improvements/degradations.
+
+5. CONTROLLED DESIGN STUDY
+--------------------------------------------------------------------------------
+[x] Choose one bounded study (We will do SAM rho):
+    - Vary rho in {0.01, 0.05, 0.1} for SAM.
+[x] Expected effect must be stated before interpreting results.
+
+6. REQUIRED EVIDENCE FOR NEURIPS REPORT (PDF Page 11)
+--------------------------------------------------------------------------------
+[x] Table comparing ERM, DAN-DG, and SAM on source validation, mean-source, worst-source, and Sketch accuracy/macro-F1.
+[x] Source-domain separability and common sharpness proxy for all three models.
+[x] Training curves (classification loss, MMD penalty).
+[x] Compact table/plot for the controlled SAM study.
+[x] Per-class Sketch changes and selected failures (compared with Task 2 results).
+
+7. REPOSITORY STRUCTURE (PDF Page 11)
+--------------------------------------------------------------------------------
+task3/
+    configs/erm.yaml dan_dg.yaml sam.yaml
+    models/backbone.py classifier_head.py
+    methods/erm.py dan_dg.py sam.py
+    selection/source_validation.py
+    evaluation/domain_metrics.py source_domain_separability.py sharpness.py
+    train.py
+    evaluate_sketch.py
+================================================================================

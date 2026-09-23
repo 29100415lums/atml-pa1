@@ -1,0 +1,112 @@
+================================================================================
+ATML PA1 - TASK 2: UNSUPERVISED DOMAIN ADAPTATION (UDA)
+REQUIREMENTS SPECIFICATION & VERIFICATION CHECKLIST
+================================================================================
+
+1. DATASET & SPLITS (PACS)
+--------------------------------------------------------------------------------
+[x] Dataset: PACS (7 classes: dog, elephant, giraffe, guitar, horse, house, person).
+[x] Source Domains: Photo, Art Painting, Cartoon (labeled).
+[x] Target Domain: Sketch (unlabeled during adaptation; transductive protocol).
+[x] Stratified 80/20 train/validation split per source domain using seed 6304.
+[x] Split definition saved to shared/splits/pacs_sketch_seed6304.json.
+[x] Transductive protocol: all Sketch images available without labels during adaptation.
+[x] Target Leakage Rule: Target class labels strictly forbidden during training,
+    checkpoint selection, and hyperparameter tuning. Only used at final evaluation!
+
+2. MODEL ARCHITECTURE & BATCH-NORMALIZATION POLICY
+--------------------------------------------------------------------------------
+[x] Backbone: torchvision ResNet-18 initialized with ResNet18_Weights.IMAGENET1K_V1.
+[x] Head: 7-class linear classifier layer (512 -> 7).
+[x] Fine-tuning: Full network fine-tuned for all methods.
+[x] CRITICAL BATCHNORM RULE: Freeze all BatchNorm running means and variances
+    at pretrained ImageNet values for all methods!
+    (Only affine parameters gamma and beta remain trainable).
+[x] PyTorch implementation: call m.eval() on BatchNorm layers after model.train().
+[x] Preprocessing (Train): Resize to 256x256, random crop 224x224, random horizontal flip.
+[x] Preprocessing (Val/Eval): Resize to 256x256, center crop 224x224.
+[x] Normalization: ImageNet mean [0.485, 0.456, 0.406], std [0.229, 0.224, 0.225].
+
+3. TRAINING BUDGET & OPTIMIZATION
+--------------------------------------------------------------------------------
+[x] Optimizer: AdamW, learning rate = 1e-4, weight decay = 1e-4.
+[x] Epoch budget: Maximum 30 source epochs.
+[x] Early stopping: 5 epochs without improvement in mean source-validation macro-F1.
+[x] Seed: 6304 across all initializations, splits, loaders, and evaluations.
+[x] Batch composition:
+    - 8 Photo + 8 Art Painting + 8 Cartoon = 24 source examples (domain-balanced).
+    - 24 Sketch examples (target).
+    - Total equal batch size: 24 source vs 24 target (cycle loaders when necessary).
+
+4. THE FOUR REQUIRED METHODS
+--------------------------------------------------------------------------------
+[x] Method 1: Source-Only ERM
+    - Cross-entropy loss over domain-balanced source batches (24 samples).
+    - Checkpoint saved and reused unchanged as Task 3 ERM baseline.
+[x] Method 2: DAN (Deep Adaptation Networks - MMD Alignment)
+    - Classification loss + lambda_MMD * MMD^2(F(Xs), F(Xt)) on 512-d feature.
+    - lambda_MMD = 1.0.
+    - Sum of 3 RBF Gaussian kernels with bandwidths 0.5, 1.0, 2.0 * median pairwise
+      squared distance of the combined batch.
+[x] Method 3: DANN (Domain-Adversarial Neural Networks - Adversarial GRL)
+    - Binary domain discriminator attached to 512-d feature via Gradient Reversal Layer.
+    - Architecture: Linear(512 -> 256) -> ReLU -> Dropout(0.5) -> Linear(256 -> 2).
+    - Schedule: alpha(p) = 2 / (1 + exp(-10*p)) - 1, where p = epoch / max_epochs.
+    - Loss: source class loss + domain classification loss (unit weight 1.0).
+[x] Method 4: CDAN (Class-Conditional Adversarial Alignment)
+    - Multilinear conditioning: g(x) = vec(f (x) p), dimension 512 * 7 = 3584.
+    - Discriminator: Linear(3584 -> 256) -> ReLU -> Dropout(0.5) -> Linear(256 -> 2).
+    - Same GRL schedule alpha(p) and unit weight as DANN.
+    - No entropy conditioning; do NOT detach f or p.
+
+5. EVALUATION METRICS & DIAGNOSTICS
+--------------------------------------------------------------------------------
+[x] Source validation accuracy and macro-F1 for Photo, Art Painting, Cartoon, and Mean.
+[x] Target (Sketch) final accuracy and macro-F1 for all 4 methods.
+[x] Target accuracy gain relative to Source-only: Delta Acc = Acc_target - Acc_source_only.
+[x] Domain Separability Score:
+    - Freeze backbone, extract balanced source-val and target features.
+    - 70/30 split using seed 6304.
+    - Train balanced Logistic Regression (C=1.0) to predict Source vs. Target.
+    - Test accuracy is the Domain Separability Score (50% = chance).
+[x] Per-class accuracy on Sketch:
+    - Identify classes with largest gain (positive transfer) and largest drop (negative transfer).
+    - Analyze dominant error confusions.
+
+6. CONTROLLED DESIGN STUDY
+--------------------------------------------------------------------------------
+[x] Choose one bounded study:
+    - Option A: Vary lambda_MMD in {0.1, 1.0, 10.0} for DAN.
+    - Option B: Vary max GRL strength in {0.25, 0.5, 1.0} for DANN.
+[x] Evaluate trade-off between alignment pressure, domain separability, and target accuracy.
+
+7. REQUIRED EVIDENCE FOR NEURIPS REPORT (PDF Page 8)
+--------------------------------------------------------------------------------
+[x] Comparison table: Source-only, DAN, DANN, CDAN on all validation domains,
+    mean source, target accuracy, macro-F1, Delta Acc, and Domain Separability.
+[x] Loss curves: classification loss and domain/alignment loss across epochs.
+[x] Per-class target accuracy changes and failure cases / confusions.
+[x] Controlled study table or plot across varying alignment strengths.
+
+8. REPOSITORY STRUCTURE (PDF Page 8)
+--------------------------------------------------------------------------------
+shared/
+    pacs.py
+    pacs_protocol.py
+    splits/pacs_sketch_seed6304.json
+task2/
+    configs/
+        base.yaml source_only.yaml dan.yaml dann.yaml cdan.yaml
+    models/
+        backbone.py classifier_head.py domain_discriminator.py
+    methods/
+        source_only.py dan.py dann.py cdan.py
+    evaluation/
+        metrics.py domain_separability.py class_analysis.py
+    scripts/
+        train.py evaluate_final.py
+    results/
+        checkpoints/ plots/ logs/
+    requirements.txt
+    REQUIREMENTS_CHECKLIST.md
+================================================================================

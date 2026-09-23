@@ -1,0 +1,5 @@
+method: "erm"
+patience: 5
+max_epochs: 30
+source_batch_size: 8
+seed: 6304

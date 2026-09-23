@@ -1,0 +1,6 @@
+method: "dan_dg"
+patience: 5
+max_epochs: 30
+source_batch_size: 8
+seed: 6304
+lambda_dg: 1.0
