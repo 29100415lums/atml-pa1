@@ -203,7 +203,7 @@ def main(args):
     else:
         model_dann, disc_dann, hist_dann = train_dann(
             train_loaders, target_train_loader, val_loaders, DEVICE,
-            max_epochs=30, patience=5, save_path=dann_ckpt
+            max_epochs=30, patience=10, save_path=dann_ckpt
         )
     histories['dann'] = hist_dann
     all_models['dann'] = model_dann
@@ -222,7 +222,7 @@ def main(args):
     else:
         model_cdan, disc_cdan, hist_cdan = train_cdan(
             train_loaders, target_train_loader, val_loaders, DEVICE,
-            max_epochs=30, patience=5, save_path=cdan_ckpt
+            max_epochs=30, patience=10, save_path=cdan_ckpt
         )
     histories['cdan'] = hist_cdan
     all_models['cdan'] = model_cdan
