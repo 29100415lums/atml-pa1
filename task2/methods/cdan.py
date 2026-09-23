@@ -131,8 +131,11 @@ def train_cdan(train_loaders, target_loader, val_loaders, device,
             dom_loss = (dom_criterion(src_dom_logits, src_dom_labels) +
                         dom_criterion(tgt_dom_logits, tgt_dom_labels)) / 2.0
 
-            total_loss = cls_loss + dom_loss
+            total_loss = cls_loss + 0.5 * dom_loss
             total_loss.backward()
+            torch.nn.utils.clip_grad_norm_(
+                list(model.parameters()) + list(disc.parameters()), max_norm=1.0
+            )
             optimizer.step()
             model.freeze_bn_running_stats()
 
