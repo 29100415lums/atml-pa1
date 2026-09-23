@@ -69,14 +69,12 @@ def train_dann(train_loaders, target_loader, val_loaders, device,
         model.train()
         model.freeze_bn_running_stats()
         disc.train()
-
-        # Set GRL alpha based on schedule
-        alpha = grl_schedule(epoch, max_epochs)
-        disc.set_alpha(alpha)
-
         epoch_cls, epoch_dom, epoch_total = 0.0, 0.0, 0.0
 
         for step in range(steps_per_epoch):
+            # Set GRL alpha based on schedule smoothly per step
+            alpha = grl_schedule(epoch, max_epochs, step=step, steps_per_epoch=steps_per_epoch)
+            disc.set_alpha(alpha)
             src_imgs, src_labels = [], []
             for domain in source_domains:
                 imgs, labels, _ = next(train_loaders[domain])
@@ -112,7 +110,7 @@ def train_dann(train_loaders, target_loader, val_loaders, device,
             dom_loss = (dom_criterion(src_dom_logits, src_dom_labels) +
                         dom_criterion(tgt_dom_logits, tgt_dom_labels)) / 2.0
 
-            total_loss = cls_loss + 0.1 * dom_loss
+            total_loss = cls_loss + 1.0 * dom_loss
             total_loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             torch.nn.utils.clip_grad_norm_(disc.parameters(), max_norm=1.0)
