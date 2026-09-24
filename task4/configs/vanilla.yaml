@@ -1,0 +1,7 @@
+method: vanilla
+data_root: ./shared/data
+splits_path: ./task4/data/splits.json
+batch_size: 128
+epochs: 100
+seed: 6304
+use_randaug: false

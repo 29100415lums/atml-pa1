@@ -1,0 +1,77 @@
+================================================================================
+ATML PA1 - TASK 4: OPEN-SET RECOGNITION (OSR)
+REQUIREMENTS SPECIFICATION & VERIFICATION CHECKLIST
+================================================================================
+
+1. DATASET & SETUP
+--------------------------------------------------------------------------------
+[ ] Known Classes: CIFAR-10 (10 classes).
+[ ] Split: Stratified 90/10 split of official training set for train/val (seed 6304).
+[ ] Test: Complete CIFAR-10 test set.
+[ ] Unknowns: CIFAR-100 test classes (800 images per group).
+    - Near: bus, pickup_truck, motorcycle, tractor, wolf, fox, leopard, camel
+    - Far: bottle, bowl, chair, clock, keyboard, mushroom, sunflower, wardrobe
+[ ] Strictly no CIFAR-100 training images can be used.
+
+2. MODEL ARCHITECTURE
+--------------------------------------------------------------------------------
+[ ] CIFAR-appropriate ResNet-18:
+    - Replace 7x7 stride-2 first conv with 3x3 stride-1 conv.
+    - Remove initial max-pooling layer.
+    - Operate on 32x32 images.
+
+3. BASE TRAINING RECIPE
+--------------------------------------------------------------------------------
+[ ] Augmentation: Random crop 32x32 (4-pixel padding), random horizontal flip.
+[ ] Optimizer: SGD, lr=0.1, momentum=0.9, weight_decay=5e-4.
+[ ] Scheduler: Cosine decay over 100 epochs.
+[ ] Batch Size: 128.
+[ ] Seed: 6304.
+[ ] Checkpointing: Save based on highest CIFAR-10 validation accuracy.
+
+4. STEP 1: VANILLA CLOSED-SET BASELINE
+--------------------------------------------------------------------------------
+[ ] Train 10-class ResNet-18 from random init using base recipe.
+[ ] Freeze checkpoint and extract penultimate features f(x) and logits z(x) for all evaluation sets (saved to cache/).
+[ ] Report CIFAR-10 test accuracy (Closed-Set Accuracy).
+
+5. STEP 2: POST-HOC NOVELTY SCORES
+--------------------------------------------------------------------------------
+[ ] Compute using frozen vanilla outputs:
+    - MSP: u_MSP(x) = 1 - max(p_k(x))
+    - MLS: u_MLS(x) = -max(z_k(x))
+    - Energy: u_Energy(x) = -log(sum(exp(z_k(x))))
+    - Mahalanobis: min_c (f(x) - mu_c)^T \Sigma^-1 (f(x) - mu_c)
+        * mu_c and diagonal \Sigma computed from unaugmented CIFAR-10 train features.
+        * Add 10^-6 to diagonal entries of \Sigma.
+
+6. STEP 3: GCSC - STRONG CLOSED-SET CLASSIFIER + MLS
+--------------------------------------------------------------------------------
+[ ] Train a new ResNet-18 from scratch.
+[ ] Insert RandAugment(num_ops=2, magnitude=9) after crop/flip, before to_tensor/normalize.
+[ ] Base recipe identical to Vanilla.
+[ ] Evaluate with MLS.
+
+7. STEP 4: PROSER - CLASSIFIER AND DATA PLACEHOLDERS
+--------------------------------------------------------------------------------
+[ ] Initialize from selected Vanilla checkpoint.
+[ ] Append 5 dummy classifiers.
+[ ] Fine-tune: 50 epochs, SGD lr=1e-3, momentum=0.9, wd=5e-4, cosine decay, batch 128.
+[ ] Split mini-batch: half for classifier placeholder (beta=1), half for data placeholder (gamma=0.1).
+[ ] Manifold Mixup (Data placeholder):
+    - Mixup after layer2, before layer3: h_tilde = lambda*h_i + (1-lambda)*h_j
+    - Classes i and j must differ.
+    - lambda ~ Beta(2,2).
+[ ] Train mixup examples towards dummy classifiers.
+[ ] Evaluate PROSER using MLS on 10 known-class logits.
+[ ] Evaluate PROSER using placeholder-based detection score.
+
+8. EVALUATION & METRICS
+--------------------------------------------------------------------------------
+[ ] For all scores, evaluate Known vs. Near, Known vs. Far, Known vs. All Unknowns.
+[ ] Report AUROC.
+[ ] Threshold selection: 95th percentile of unknownness on CIFAR-10 validation set.
+[ ] Report CIFAR-10 test acceptance rate, near-unknown rejection rate, far-unknown rejection rate.
+[ ] Produce required tables and figures (ROC/score distributions).
+[ ] Perform failure analysis on 3 near-unknowns and 3 far-unknowns using Vanilla MLS.
+================================================================================
