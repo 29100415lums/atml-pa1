@@ -5,7 +5,7 @@ import torchvision.transforms as T
 from torchvision.datasets import CIFAR10
 from torch.utils.data import DataLoader, Subset
 
-CIFAR10.url = "https://huggingface.co/datasets/uoft-cs/cifar10/resolve/main/cifar-10-python.tar.gz"
+CIFAR10.url = "https://data.brainchip.com/dataset-mirror/cifar10/cifar-10-python.tar.gz"
 
 def get_cifar10_loaders(data_root='./shared/data', splits_path='./task4/data/splits.json', batch_size=128, use_randaug=False):
     # Base transforms
