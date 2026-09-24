@@ -5,6 +5,8 @@ import torchvision.transforms as T
 from torchvision.datasets import CIFAR10
 from torch.utils.data import DataLoader, Subset
 
+CIFAR10.url = "https://ossci-datasets.s3.amazonaws.com/cifar/cifar-10-python.tar.gz"
+
 def get_cifar10_loaders(data_root='./shared/data', splits_path='./task4/data/splits.json', batch_size=128, use_randaug=False):
     # Base transforms
     if use_randaug:

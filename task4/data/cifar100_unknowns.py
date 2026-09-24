@@ -4,6 +4,8 @@ import torchvision.transforms as T
 from torchvision.datasets import CIFAR100
 from torch.utils.data import DataLoader, Subset
 
+CIFAR100.url = "https://ossci-datasets.s3.amazonaws.com/cifar/cifar-100-python.tar.gz"
+
 NEAR_UNKNOWN_CLASSES = [
     'bus', 'pickup_truck', 'motorcycle', 'tractor', 
     'wolf', 'fox', 'leopard', 'camel'
