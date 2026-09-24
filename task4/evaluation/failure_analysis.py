@@ -15,8 +15,8 @@ from scores.mls import get_mls_score
 from evaluation.metrics import get_threshold_at_fpr
 from torchvision.datasets import CIFAR10, CIFAR100
 
-CIFAR10.url = "https://ossci-datasets.s3.amazonaws.com/cifar/cifar-10-python.tar.gz"
-CIFAR100.url = "https://ossci-datasets.s3.amazonaws.com/cifar/cifar-100-python.tar.gz"
+CIFAR10.url = "https://huggingface.co/datasets/uoft-cs/cifar10/resolve/main/cifar-10-python.tar.gz"
+CIFAR100.url = "https://huggingface.co/datasets/uoft-cs/cifar100/resolve/main/cifar-100-python.tar.gz"
 
 def get_classes_maps():
     cifar10 = CIFAR10(root='./shared/data', download=True)

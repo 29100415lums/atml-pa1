@@ -4,8 +4,8 @@ import numpy as np
 from torchvision.datasets import CIFAR10, CIFAR100
 from sklearn.model_selection import train_test_split
 
-CIFAR10.url = "https://ossci-datasets.s3.amazonaws.com/cifar/cifar-10-python.tar.gz"
-CIFAR100.url = "https://ossci-datasets.s3.amazonaws.com/cifar/cifar-100-python.tar.gz"
+CIFAR10.url = "https://huggingface.co/datasets/uoft-cs/cifar10/resolve/main/cifar-10-python.tar.gz"
+CIFAR100.url = "https://huggingface.co/datasets/uoft-cs/cifar100/resolve/main/cifar-100-python.tar.gz"
 
 def create_cifar_splits(data_root='./shared/data', save_path='./task4/data/splits.json', seed=6304):
     os.makedirs(data_root, exist_ok=True)
