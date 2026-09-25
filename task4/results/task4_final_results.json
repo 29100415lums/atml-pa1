@@ -1,0 +1,64 @@
+{
+  "vanilla": {
+    "csa": 0.9440000057220459,
+    "MSP": {
+      "auroc_near": 0.8115585625,
+      "auroc_far": 0.9018402499999999,
+      "auroc_all": 0.8566994062500001,
+      "accept_test": 0.9507,
+      "reject_near": 0.27125,
+      "reject_far": 0.4475
+    },
+    "MLS": {
+      "auroc_near": 0.7899403125000001,
+      "auroc_far": 0.8973985,
+      "auroc_all": 0.8436694062500001,
+      "accept_test": 0.9507,
+      "reject_near": 0.28625,
+      "reject_far": 0.52
+    },
+    "Energy": {
+      "auroc_near": 0.78994775,
+      "auroc_far": 0.8975810000000001,
+      "auroc_all": 0.843764375,
+      "accept_test": 0.9521,
+      "reject_near": 0.28375,
+      "reject_far": 0.52375
+    },
+    "Mahalanobis": {
+      "auroc_near": 0.8002456875,
+      "auroc_far": 0.92336925,
+      "auroc_all": 0.86180746875,
+      "accept_test": 0.9507,
+      "reject_near": 0.2625,
+      "reject_far": 0.51375
+    }
+  },
+  "gcsc": {
+    "csa": 0.9524000287055969,
+    "MLS": {
+      "auroc_near": 0.8203487500000001,
+      "auroc_far": 0.9070768750000001,
+      "accept_test": 0.9468,
+      "reject_near": 0.36375,
+      "reject_far": 0.60125
+    }
+  },
+  "proser": {
+    "csa": 0.9455000162124634,
+    "MLS (Known)": {
+      "auroc_near": 0.7701364375,
+      "auroc_far": 0.8972897499999999,
+      "accept_test": 0.9509,
+      "reject_near": 0.27125,
+      "reject_far": 0.50875
+    },
+    "PROSER Detection Score": {
+      "auroc_near": 0.7534706875,
+      "auroc_far": 0.908333,
+      "accept_test": 0.9505,
+      "reject_near": 0.27125,
+      "reject_far": 0.56375
+    }
+  }
+}
