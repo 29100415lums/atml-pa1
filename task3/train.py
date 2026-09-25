@@ -109,7 +109,7 @@ def train(config, args):
     max_epochs = config.get('max_epochs', 30)
     patience = config.get('patience', 5)
     
-    if method == 'sam':
+    if method.startswith('sam'):
         base_optimizer = torch.optim.AdamW
         optimizer = SAM(model.parameters(), base_optimizer, rho=config.get('rho', 0.05), lr=lr, weight_decay=wd)
     else:
@@ -144,7 +144,7 @@ def train(config, args):
             all_imgs = torch.cat(src_imgs, dim=0)
             all_labels = torch.cat(src_labels, dim=0)
             
-            if method == 'sam':
+            if method.startswith('sam'):
                 # First pass
                 logits, _ = model(all_imgs)
                 loss = criterion(logits, all_labels)
