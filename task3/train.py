@@ -121,6 +121,8 @@ def train(config, args):
     best_state = None
     steps_per_epoch = 50
     
+    history = {'train_loss': [], 'val_f1': [], 'cls_loss': [], 'mmd_loss': []}
+    
     print(f"--- Training {method.upper()} ---")
     
     for epoch in range(max_epochs):
@@ -156,6 +158,7 @@ def train(config, args):
                 optimizer.second_step(zero_grad=True)
                 model.freeze_bn_running_stats()
                 
+                epoch_cls += loss.item()
                 epoch_total += loss.item()
                 
             elif method == 'dan_dg':
@@ -189,7 +192,17 @@ def train(config, args):
         
         # Evaluate on source domains
         mean_f1 = _evaluate_source_domains(model, val_loaders)
-        print(f"Epoch {epoch+1}/{max_epochs} | Total Loss: {epoch_total/steps_per_epoch:.4f} | Mean Source F1: {mean_f1:.4f}")
+        
+        avg_total = epoch_total / steps_per_epoch
+        avg_cls = epoch_cls / steps_per_epoch
+        avg_mmd = epoch_mmd / steps_per_epoch
+        
+        history['train_loss'].append(avg_total)
+        history['cls_loss'].append(avg_cls)
+        history['mmd_loss'].append(avg_mmd)
+        history['val_f1'].append(mean_f1)
+        
+        print(f"Epoch {epoch+1}/{max_epochs} | Total Loss: {avg_total:.4f} | Mean Source F1: {mean_f1:.4f}")
         
         if mean_f1 > best_mean_f1:
             best_mean_f1 = mean_f1
@@ -204,6 +217,11 @@ def train(config, args):
     if best_state is not None:
         torch.save(best_state, save_path)
         print(f"Saved best model to {save_path} (F1={best_mean_f1:.4f})")
+        
+    hist_path = os.path.join(TASK3_ROOT, 'results', f"{method}_history.json")
+    with open(hist_path, 'w') as f:
+        json.dump(history, f)
+    print(f"Saved training history to {hist_path}")
 
 def _evaluate_source_domains(model, val_loaders):
     model.eval()
